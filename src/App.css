@@ -1,0 +1,28 @@
+.calender_style_adjustment .MuiStack-root {
+    padding-top: 0px !important;
+}
+
+.calender_style_adjustment .MuiStack-root .MuiStack-root .MuiDateCalendar-root .MuiPickersCalendarHeader-root {
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+}
+
+.calender_style_adjustment .MuiStack-root .MuiStack-root .MuiDateCalendar-root {
+    height: 310px !important;
+}
+
+.main_class_app .MuiBox-root main{
+    /* padding: 0 !important; */
+    background-color: #2e2e48;
+}
+
+.main_class_app .MuiBox-root header{
+border: none !important;
+}
+
+.linear_progress span{
+    background-color: #9797D7 !important;
+}
+.linear_progress span span{
+    background-color: #686892 !important;
+}
