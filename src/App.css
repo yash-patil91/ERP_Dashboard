@@ -26,3 +26,37 @@ border: none !important;
 .linear_progress span span{
     background-color: #686892 !important;
 }
+
+.Jurnalumum_table_box .MuiTableHead-root .MuiTableRow-root .MuiTableCell-root{
+    font-size:0.6rem !important;
+    padding: 2px !important;
+}
+
+.Jurnalumum_table_box .MuiTableBody-root .MuiTableRow-root .MuiTableCell-root{
+    font-size:0.5rem !important;
+    padding: 2px !important;
+}
+
+
+.css-1gsw949-MuiTableCell-root:not(:last-of-type):after {
+    width: 0px;
+}
+
+.Jurnalumum_first_table{
+    background-color: #4D4D6C;
+}
+.Jurnalumum_second_table{
+    background-color: #626288;
+}
+
+.Jurnalumum_third_table thead tr th {
+border: none !important;
+}
+.Jurnalumum_third_table tbody tr td {
+border: none !important;
+}
+
+.Jurnalumum_table_main_box .MuiPaper-root{
+    box-shadow: none;
+    border-radius: 0px;
+}

@@ -34,42 +34,42 @@ export default function Currency() {
             <div className="slider-container" style={{padding:"0 1rem",color:"white"}}>
                 <Slider {...settings}>
                     <div>
-                        <Box sx={{ marginLeft:"1rem",placeItems:"center",display:"grid",gap:"0.3rem",backgroundColor: "#9797EF", borderRadius: "0.5rem", padding: "0.7rem 0.5rem",width:"5rem" }}>
+                        <Box sx={{ marginLeft:"1rem",placeItems:"center",display:"grid",gap:"0.3rem",backgroundColor: "#9797EF", borderRadius: "0.5rem", padding: "0.7rem 0.5rem",width:"5rem",boxShadow: "0px 0px 1px 0px #0000000A" }}>
                             <img src={flag} alt="" style={{borderRadius:"50%"}}/>
                             <Typography>$</Typography>
                             <Typography>USD</Typography>
                         </Box>
                     </div>
                     <div>
-                        <Box sx={{ marginLeft:"1rem",placeItems:"center",display:"grid",gap:"0.3rem",backgroundColor: "#9797EF", borderRadius: "0.5rem", padding: "0.7rem 0.5rem",width:"5rem" }}>
+                        <Box sx={{ marginLeft:"1rem",placeItems:"center",display:"grid",gap:"0.3rem",backgroundColor: "#9797EF", borderRadius: "0.5rem", padding: "0.7rem 0.5rem",width:"5rem",boxShadow: "0px 0px 1px 0px #0000000A" }}>
                             <img src={flag} alt="" style={{borderRadius:"50%"}}/>
                             <Typography>$</Typography>
                             <Typography>USD</Typography>
                         </Box>
                     </div>
                     <div>
-                        <Box sx={{ marginLeft:"1rem",placeItems:"center",display:"grid",gap:"0.3rem",backgroundColor: "#9797EF", borderRadius: "0.5rem", padding: "0.7rem 0.5rem",width:"5rem" }}>
+                        <Box sx={{ marginLeft:"1rem",placeItems:"center",display:"grid",gap:"0.3rem",backgroundColor: "#9797EF", borderRadius: "0.5rem", padding: "0.7rem 0.5rem",width:"5rem",boxShadow: "0px 0px 1px 0px #0000000A" }}>
                             <img src={flag} alt="" style={{borderRadius:"50%"}}/>
                             <Typography>$</Typography>
                             <Typography>USD</Typography>
                         </Box>
                     </div>
                     <div>
-                        <Box sx={{ marginLeft:"1rem",placeItems:"center",display:"grid",gap:"0.3rem",backgroundColor: "#9797EF", borderRadius: "0.5rem", padding: "0.7rem 0.5rem",width:"5rem" }}>
+                        <Box sx={{ marginLeft:"1rem",placeItems:"center",display:"grid",gap:"0.3rem",backgroundColor: "#9797EF", borderRadius: "0.5rem", padding: "0.7rem 0.5rem",width:"5rem",boxShadow: "0px 0px 1px 0px #0000000A" }}>
                             <img src={flag} alt="" style={{borderRadius:"50%"}}/>
                             <Typography>$</Typography>
                             <Typography>USD</Typography>
                         </Box>
                     </div>
                     <div>
-                        <Box sx={{ marginLeft:"1rem",placeItems:"center",display:"grid",gap:"0.3rem",backgroundColor: "#9797EF", borderRadius: "0.5rem", padding: "0.7rem 0.5rem",width:"5rem" }}>
+                        <Box sx={{ marginLeft:"1rem",placeItems:"center",display:"grid",gap:"0.3rem",backgroundColor: "#9797EF", borderRadius: "0.5rem", padding: "0.7rem 0.5rem",width:"5rem",boxShadow: "0px 0px 1px 0px #0000000A" }}>
                             <img src={flag} alt="" style={{borderRadius:"50%"}}/>
                             <Typography>$</Typography>
                             <Typography>USD</Typography>
                         </Box>
                     </div>
                     <div>
-                        <Box sx={{ marginLeft:"1rem",placeItems:"center",display:"grid",gap:"0.3rem",backgroundColor: "#9797EF", borderRadius: "0.5rem", padding: "0.7rem 0.5rem",width:"5rem" }}>
+                        <Box sx={{ marginLeft:"1rem",placeItems:"center",display:"grid",gap:"0.3rem",backgroundColor: "#9797EF", borderRadius: "0.5rem", padding: "0.7rem 0.5rem",width:"5rem",boxShadow: "0px 0px 1px 0px #0000000A" }}>
                             <img src={flag} alt="" style={{borderRadius:"50%"}}/>
                             <Typography>$</Typography>
                             <Typography>USD</Typography>
