@@ -32,7 +32,7 @@ export default function Invoice() {
         </Typography>
       </Stack>
       <TableContainer component={Paper}>
-        <Table sx={{ minWidth: 650, background: "#3A3A5A",height:"200px" }} aria-label="simple table" className='Jurnalumum_table_box'>
+        <Table sx={{ minWidth: 550, background: "#3A3A5A",height:"220px" }} aria-label="simple table" className='Jurnalumum_table_box'>
           <TableHead>
             <TableRow>
               <TableCell sx={{ color: "white" }}>Pemerima</TableCell>
