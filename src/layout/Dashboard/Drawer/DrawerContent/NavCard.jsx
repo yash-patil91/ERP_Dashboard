@@ -14,16 +14,25 @@ import MainCard from 'components/MainCard';
 import avatar from 'assets/images/users/avatar-group.png';
 import AnimateButton from 'components/@extended/AnimateButton';
 import { Card } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 // ==============================|| DRAWER CONTENT - NAVIGATION CARD ||============================== //
 
 export default function NavCard() {
+
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    localStorage.removeItem("token")
+    navigate('/login')
+  }
+
   return (
     <>
-      <Card sx={{ bgcolor: 'grey.50', mx: 7, mt: 17,py:1,cursor:"pointer" }}>
+      <Card sx={{ bgcolor: 'grey.50', mx: 7, mt: 17, py: 1, cursor: "pointer" }}>
         <Box display='flex' justifyContent="space-around" >
           <img src={LogOut} alt="" />
-          <Typography variant="h5">Logout</Typography>
+          <Typography variant="h5" onClick={handleLogout}>Logout</Typography>
         </Box>
       </Card>
       <Box mt={1}>

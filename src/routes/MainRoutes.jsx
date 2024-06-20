@@ -3,6 +3,7 @@ import { lazy } from 'react';
 // project import
 import Loadable from 'components/Loadable';
 import Dashboard from 'layout/Dashboard';
+import PrivateRoute from 'components/PrivateRoutes';
 
 // const Color = Loadable(lazy(() => import('pages/component-overview/color')));
 
@@ -16,23 +17,25 @@ const LaporannPage  = Loadable(lazy(()=> import('pages/Laporan/index')));
 
 const MainRoutes = {
   path: '/',
-  element: <Dashboard />,
+  element: <PrivateRoute><Dashboard /></PrivateRoute>,
   children: [
     {
       path: '/Administrasi',
-      element: <Administrasi />
+      element: <PrivateRoute>
+      <Administrasi />
+    </PrivateRoute>
     },
     {
       path: '/Datamaster',
-      element: <DatamasterPage/>
+      element: <PrivateRoute><DatamasterPage/></PrivateRoute>
     },
     {
       path: '/Transaksi',
-      element: <TransaksiPage/>
+      element: <PrivateRoute><TransaksiPage/></PrivateRoute>
     },
     {
       path: '/Laporann',
-      element: <LaporannPage/>
+      element: <PrivateRoute><LaporannPage/></PrivateRoute>
     },
 
    
@@ -41,7 +44,7 @@ const MainRoutes = {
       children: [
         {
           path: 'default',
-          element: <DashboardDefault />
+          element: <PrivateRoute><DashboardDefault /></PrivateRoute>
         }
       ]
     },
