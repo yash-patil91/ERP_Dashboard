@@ -1,4 +1,6 @@
 import { useMemo } from 'react';
+import React, { useContext } from 'react';
+import { DarkModeContext } from '../../../components/DarkModeContext';
 
 // material-ui
 import { useTheme } from '@mui/material/styles';
@@ -20,6 +22,8 @@ import MenuUnfoldOutlined from '@ant-design/icons/MenuUnfoldOutlined';
 // ==============================|| MAIN LAYOUT - HEADER ||============================== //
 
 export default function Header() {
+  const { darkMode } = useContext(DarkModeContext);
+
   const theme = useTheme();
   const downLG = useMediaQuery(theme.breakpoints.down('lg'));
 
@@ -34,7 +38,7 @@ export default function Header() {
 
   // common header
   const mainHeader = (
-    <Toolbar sx={{background:"#2e2e48"}}>
+    <Toolbar sx={{background:darkMode ? '#3A3A5A' : '#f7c345'}}>
       <IconButton
         disableRipple
         aria-label="open drawer"

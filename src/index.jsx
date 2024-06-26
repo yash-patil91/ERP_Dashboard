@@ -32,10 +32,12 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+import { DarkModeProvider } from './components/DarkModeContext';
+
 
 // ==============================|| MAIN - REACT DOM RENDER ||============================== //
 
-root.render(<App />);
+root.render( <DarkModeProvider><App /></DarkModeProvider>);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

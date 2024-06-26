@@ -1,6 +1,5 @@
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-import * as React from 'react';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -17,6 +16,8 @@ import DownloadIcon from '@mui/icons-material/Download';
 import UploadIcon from '@mui/icons-material/Upload';
 import CreateIcon from '@mui/icons-material/Create';
 import MenuIcon from '@mui/icons-material/Menu';
+import { DarkModeContext } from '../../components/DarkModeContext';
+import React, { useEffect,useContext } from "react";
 
 
 function createData(name, calories, fat, carbs,last) {
@@ -33,8 +34,10 @@ const rows = [
 // project import
 
 export default function JurnalUmum() {
+  const { darkMode } = useContext(DarkModeContext);
+
   return (
-    <MainCard contentSX={{ p: 2.25, background: "#3A3A5A" }}>
+    <MainCard contentSX={{ p: 2.25, background: darkMode ? '#3A3A5A' : 'radial-gradient(circle at 10% 20%, rgb(255, 200, 124) 0%, rgb(252, 251, 121) 90%)' }}>
       <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem', paddingBottom: '0.5rem', color: 'white' }}>
 
         <Typography variant="h6">Jurnal Umum</Typography>
@@ -52,9 +55,9 @@ export default function JurnalUmum() {
           </Box>
           <Box sx={{ width: { xs: '100%', md: 'auto' }, ml: { xs: 0, md: 1 } }}>
 
-            <Box sx={{ display: "flex", width: '100%', height: "1.4rem", borderRadius: 10, overflow: "hidden", background: "#3A3A5A", boxShadow: "4px 4px 10px 2px #00000040" }} >
+            <Box sx={{ display: "flex", width: '100%', height: "1.4rem", borderRadius: 10, overflow: "hidden", background:darkMode ? '#3A3A5A' : 'radial-gradient(circle at 10% 20%, rgb(255, 200, 124) 0%, rgb(252, 251, 121) 90%)', boxShadow: "4px 4px 10px 2px #00000040" }} >
 
-              <input style={{ width: "100%", outline: "none", border: "none", marginLeft: "20px", background: "#3A3A5A", color: "white", }} type="text" placeholder='Search...' />
+              <input style={{ width: "100%", outline: "none", border: "none", marginLeft: "20px", background:darkMode ? '#3A3A5A' : 'radial-gradient(circle at 10% 20%, rgb(255, 200, 124) 0%, rgb(252, 251, 121) 90%)', color: "white", }} type="text" placeholder='Search...' />
 
               <button style={{ padding: "5px 10px 5px 5px", cursor: "pointer", right: "12px", border: "none", background: "none", }}>
                 <SearchOutlined style={{ color: "grey" }} />
@@ -66,7 +69,7 @@ export default function JurnalUmum() {
       <Typography ml={2} color="white">Hasil Pencarian</Typography>
      <Box sx={{display:"grid",gap:"1rem"}}>
      <TableContainer component={Paper}>
-        <Table sx={{ minWidth: 650, background: "#3A3A5A" }} aria-label="simple table" className='Jurnalumum_table_box Jurnalumum_first_table'>
+        <Table sx={{ minWidth: 650,background: darkMode ? '#3A3A5A' : '#f7c345' }} aria-label="simple table" className='Jurnalumum_table_box Jurnalumum_first_table'>
           <TableHead>
             <TableRow>
               <TableCell align="left" sx={{ color: "white",visibility:"hidden" }}>No</TableCell>
@@ -82,7 +85,7 @@ export default function JurnalUmum() {
           </Table>
           </TableContainer>
           <TableContainer component={Paper}>
-        <Table sx={{ minWidth: 650, background: "#3A3A5A" }} aria-label="simple table" className='Jurnalumum_table_box Jurnalumum_second_table'>
+        <Table sx={{ minWidth: 650,background: darkMode ? '#3A3A5A' : '#f7c345' }} aria-label="simple table" className='Jurnalumum_table_box Jurnalumum_second_table'>
           <TableHead>
             <TableRow>
               <TableCell align="left" sx={{ color: "white",visibility:"hidden" }}>No</TableCell>
@@ -100,7 +103,7 @@ export default function JurnalUmum() {
      </Box>
      <Box my={2} className='Jurnalumum_table_main_box'>
      <TableContainer component={Paper}>
-        <Table sx={{ minWidth: 650, background: "#3A3A5A" }} aria-label="simple table" className='Jurnalumum_table_box Jurnalumum_third_table'>
+        <Table sx={{ minWidth: 650,background: darkMode ? '#3A3A5A' : '#f7c345' }} aria-label="simple table" className='Jurnalumum_table_box Jurnalumum_third_table'>
           <TableHead>
             <TableRow>
               <TableCell align="left" sx={{ color: "white" }}>Nama Akun</TableCell>
@@ -124,7 +127,7 @@ export default function JurnalUmum() {
           </TableContainer>
      </Box>
       <TableContainer component={Paper}>
-        <Table sx={{ minWidth: 650, background: "#3A3A5A" }} aria-label="simple table" className='Jurnalumum_table_box'>
+        <Table sx={{ minWidth: 650,background: darkMode ? '#3A3A5A' : '#f7c345' }} aria-label="simple table" className='Jurnalumum_table_box'>
           <TableHead>
             <TableRow>
               <TableCell align="left" sx={{ color: "white" }}>No</TableCell>

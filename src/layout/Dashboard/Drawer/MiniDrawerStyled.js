@@ -6,12 +6,12 @@ import Drawer from '@mui/material/Drawer';
 import { drawerWidth } from 'config';
 import { border } from '@mui/system';
 
-const openedMixin = (theme) => ({
+const openedMixin = (theme, darkMode) => ({
   width: drawerWidth,
   // borderRight: '1px solid',
-  border:"none",
+  border: "none",
   // borderRightColor: theme.palette.divider,
-backgroundColor:'#464667',
+  background: darkMode ? "#464667" : "radial-gradient(circle at 10% 20%, rgb(255, 200, 124) 0%, rgb(252, 251, 121) 90%)",
   transition: theme.transitions.create('width', {
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.enteringScreen
@@ -21,7 +21,7 @@ backgroundColor:'#464667',
   boxShadow: 'none'
 });
 
-const closedMixin = (theme) => ({
+const closedMixin = (theme,darkMode) => ({
   transition: theme.transitions.create('width', {
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.leavingScreen
@@ -31,24 +31,24 @@ const closedMixin = (theme) => ({
   width: 0,
   borderRight: 'none',
   boxShadow: theme.customShadows.z1,
-  backgroundColor:'#464667'
+  background: darkMode ? "#464667" : "radial-gradient(circle at 10% 20%, rgb(255, 200, 124) 0%, rgb(252, 251, 121) 90%)",
 });
 
 // ==============================|| DRAWER - MINI STYLED ||============================== //
 
-const MiniDrawerStyled = styled(Drawer, { shouldForwardProp: (prop) => prop !== 'open' })(({ theme, open }) => ({
+const MiniDrawerStyled = styled(Drawer, { shouldForwardProp: (prop) => prop !== 'open' })(({ theme, open, darkMode }) => ({
   width: drawerWidth,
   flexShrink: 0,
   whiteSpace: 'nowrap',
   boxSizing: 'border-box',
-  backgroundColor:'#464667',
+  background: darkMode ? 'radial-gradient(circle at 10% 20%, rgb(255, 200, 124) 0%, rgb(252, 251, 121) 90%)' : '#464667',
   ...(open && {
-    ...openedMixin(theme),
-    '& .MuiDrawer-paper': openedMixin(theme)
+    ...openedMixin(theme, darkMode),
+    '& .MuiDrawer-paper': openedMixin(theme, darkMode)
   }),
   ...(!open && {
-    ...closedMixin(theme),
-    '& .MuiDrawer-paper': closedMixin(theme)
+    ...closedMixin(theme, darkMode),
+    '& .MuiDrawer-paper': closedMixin(theme, darkMode)
   })
 }));
 

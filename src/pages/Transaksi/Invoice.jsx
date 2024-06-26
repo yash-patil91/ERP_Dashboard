@@ -1,6 +1,5 @@
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-import * as React from 'react';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -9,6 +8,8 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import MainCard from 'components/MainCard';
+import { DarkModeContext } from '../../components/DarkModeContext';
+import React, { useEffect,useContext } from "react";
 
 function createData(name, calories, fat, carbs, protein) {
   return { name, calories, fat, carbs, protein };
@@ -24,15 +25,17 @@ const rows = [
 // project import
 
 export default function Invoice() {
+  const { darkMode } = useContext(DarkModeContext);
+  
   return (
-    <MainCard contentSX={{ p: 2.25, background: "#3A3A5A" }}>
+    <MainCard contentSX={{ p: 2.25, background: darkMode ? '#3A3A5A' : 'radial-gradient(circle at 10% 20%, rgb(255, 200, 124) 0%, rgb(252, 251, 121) 90%)' }}>
       <Stack spacing={0.5}>
         <Typography variant="h6" color="white">
           Invoice
         </Typography>
       </Stack>
       <TableContainer component={Paper}>
-        <Table sx={{ minWidth: 550, background: "#3A3A5A",height:"220px" }} aria-label="simple table" className='Jurnalumum_table_box'>
+        <Table sx={{ minWidth: 550, background: darkMode ? '#3A3A5A' : '#f7c345',height:"220px" }} aria-label="simple table" className='Jurnalumum_table_box'>
           <TableHead>
             <TableRow>
               <TableCell sx={{ color: "white" }}>Pemerima</TableCell>

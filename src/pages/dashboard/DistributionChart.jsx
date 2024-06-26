@@ -1,12 +1,14 @@
-import React, { useEffect } from "react";
+import React, { useEffect,useContext } from "react";
 import ApexCharts from "apexcharts";
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import MainCard from 'components/MainCard';
-
+import { DarkModeContext } from '../../components/DarkModeContext';
 
 
 export default function DistributionChart() {
+  const { darkMode } = useContext(DarkModeContext);
+
     useEffect(() => {
         const options = {
           chart: {
@@ -76,7 +78,7 @@ export default function DistributionChart() {
       }, []); 
 
     return (
-        <MainCard contentSX={{ p: 2.25, background: "#3A3A5A" }}>
+        <MainCard contentSX={{ p: 2.25, background: darkMode ? '#3A3A5A' : 'radial-gradient(circle at 10% 20%, rgb(255, 200, 124) 0%, rgb(252, 251, 121) 90%)' }}>
             <Stack spacing={0.5}>
                 <Typography variant="h6" color="white">
                     Total Distribution

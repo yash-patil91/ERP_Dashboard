@@ -1,16 +1,19 @@
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-import * as React from 'react';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import MainCard from 'components/MainCard';
 import ToggleOffIcon from '@mui/icons-material/ToggleOff';
+import { DarkModeContext } from '../../components/DarkModeContext';
+import React, { useEffect,useContext } from "react";
 
 
 export default function Pembayaran() {
+  const { darkMode } = useContext(DarkModeContext);
+
   return (
-    <MainCard contentSX={{ p: 2.25, background: "#3A3A5A" }}>
+    <MainCard contentSX={{ p: 2.25, background: darkMode ? '#3A3A5A' : 'radial-gradient(circle at 10% 20%, rgb(255, 200, 124) 0%, rgb(252, 251, 121) 90%)' }}>
       <Stack spacing={0.5}>
         <Typography variant="h6" color="white">
           Pembayaran & Biaya

@@ -15,6 +15,10 @@
     /* padding: 0 !important; */
     background-color: #2e2e48;
 }
+.main_class_app_dark .MuiBox-root main{
+    /* padding: 0 !important; */
+    background-color: #f7c345;
+}
 
 .main_class_app .MuiBox-root header{
 border: none !important;
@@ -42,12 +46,12 @@ border: none !important;
     width: 0px;
 }
 
-.Jurnalumum_first_table{
+/* .Jurnalumum_first_table{
     background-color: #4D4D6C;
 }
 .Jurnalumum_second_table{
     background-color: #626288;
-}
+} */
 
 .Jurnalumum_third_table thead tr th {
 border: none !important;

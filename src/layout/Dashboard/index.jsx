@@ -30,13 +30,15 @@ export default function DashboardLayout() {
 
   return (
     <Box sx={{ display: 'flex', width: '100%' }}>
-      <Header />
-      <Drawer />
-      <Box component="main" sx={{ width: 'calc(100% - 260px)', flexGrow: 1, p: { xs: 2, sm: 3 } }}>
-        <Toolbar />
-        <Breadcrumbs navigation={navigation} title />
-        <Outlet />
-      </Box>
+     
+        <Header />
+        <Drawer />
+        <Box component="main" sx={{ width: 'calc(100% - 260px)', flexGrow: 1, p: { xs: 2, sm: 3 } }}>
+          <Toolbar />
+          <Breadcrumbs navigation={navigation} title />
+          <Outlet />
+        </Box>
+     
     </Box>
   );
 }

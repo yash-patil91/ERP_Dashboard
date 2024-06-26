@@ -2,14 +2,19 @@ import Grid from '@mui/material/Grid';
 import AnalyticEcommerce from 'components/cards/statistics/AnalyticEcommerce';
 import MonthlyBarChart from 'pages/dashboard/MonthlyBarChart';
 import UniqueVisitorCard from 'pages/dashboard/UniqueVisitorCard';
+import React, { useContext } from 'react';
+import { DarkModeContext } from '../../components/DarkModeContext';
+
 
 import Currency from 'components/cards/statistics/Currency';
 import Progressbar from 'pages/dashboard/Progressbar';
 import DistributionChart from 'pages/dashboard/DistributionChart';
 
 export default function index() {
+  const { darkMode } = useContext(DarkModeContext);
+
   return (
-    <Grid container rowSpacing={1.5} columnSpacing={1.75} bgcolor={'#2e2e48'} color={'white'}>
+    <Grid container rowSpacing={1.5} columnSpacing={1.75} sx={{background:darkMode?"#2e2e48":"#f7c345"}} color={'white'}>
 
       <Grid item xs={12} sm={6} md={7} lg={8}>
         <AnalyticEcommerce title="Total Page Views" count="4,42,236" percentage={59.3} extra="35,000" />

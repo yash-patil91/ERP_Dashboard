@@ -4,6 +4,8 @@ import { useMemo } from 'react';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import Drawer from '@mui/material/Drawer';
 import Box from '@mui/material/Box';
+import { DarkModeContext } from '../../../components/DarkModeContext';
+import React, { useEffect,useContext } from "react";
 
 // project import
 import DrawerHeader from './DrawerHeader';
@@ -20,6 +22,7 @@ export default function MainDrawer({ window }) {
   const drawerOpen = menuMaster.isDashboardDrawerOpened;
   const matchDownMD = useMediaQuery((theme) => theme.breakpoints.down('lg'));
 
+  const { darkMode } = useContext(DarkModeContext);
   // responsive drawer container
   const container = window !== undefined ? () => window().document.body : undefined;
 
@@ -30,7 +33,7 @@ export default function MainDrawer({ window }) {
   return (
     <Box component="nav" sx={{ flexShrink: { md: 0 }, zIndex: 1200 }} aria-label="mailbox folders">
       {!matchDownMD ? (
-        <MiniDrawerStyled variant="permanent" open={drawerOpen}  >
+        <MiniDrawerStyled variant="permanent" open={drawerOpen} darkMode={darkMode} >
           <Box > {drawerHeader}</Box>
           <Box mt={5}>{drawerContent}</Box>
         </MiniDrawerStyled>

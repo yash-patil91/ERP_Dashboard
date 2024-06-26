@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
-import { forwardRef, useEffect } from 'react';
+import { forwardRef, useEffect, useContext } from 'react';
 import { Link, useLocation, matchPath } from 'react-router-dom';
-
+import { DarkModeContext } from '../../../../../components/DarkModeContext';
 // material-ui
 import { useTheme } from '@mui/material/styles';
 import Avatar from '@mui/material/Avatar';
@@ -15,6 +15,9 @@ import Typography from '@mui/material/Typography';
 import { handlerActiveItem, useGetMenuMaster } from 'api/menu';
 
 export default function NavItem({ item, level }) {
+
+  const { darkMode } = useContext(DarkModeContext);
+
   const theme = useTheme();
 
   const { menuMaster } = useGetMenuMaster();
@@ -52,28 +55,28 @@ export default function NavItem({ item, level }) {
       onClick={() => handlerActiveItem(item.id)}
       selected={isSelected}
       sx={{
-        borderRadius:"2rem 0 0 2rem",
-        marginLeft:"2rem",
+        borderRadius: "2rem 0 0 2rem",
+        marginLeft: "2rem",
         zIndex: 1201,
         pl: drawerOpen ? `${level * 28}px` : 1.5,
         py: !drawerOpen && level === 1 ? 1.25 : 1,
         ...(drawerOpen && {
           '&:hover': {
-            bgcolor: '#2F2F47'
+            background: !darkMode ? "#f7c345" : '#2F2F47'
           },
           '&.Mui-selected': {
-            bgcolor: '#2F2F47',
+            background: !darkMode ? "#f7c345" : '#2F2F47',
             // borderRight: `2px solid ${theme.palette.primary.main}`,
             color: textColor,
             '&:hover': {
               color: textColor,
-              bgcolor: '#2F2F47'
+              background: !darkMode ? "#f7c345" : '#2F2F47'
             }
           }
         }),
         ...(!drawerOpen && {
           '&:hover': {
-            bgcolor: '#2F2F47'
+            background: !darkMode ? "#f7c345" : '#2F2F47'
           },
           '&.Mui-selected': {
             '&:hover': {
@@ -96,16 +99,16 @@ export default function NavItem({ item, level }) {
               alignItems: 'center',
               justifyContent: 'center',
               '&:hover': {
-                bgcolor: '#2F2F47'
+                background: !darkMode ? "#f7c345" : '#2F2F47',
               }
             }),
             ...(!drawerOpen &&
               isSelected && {
-                bgcolor: '#2F2F47',
-                '&:hover': {
-                  bgcolor: '#2F2F47'
-                }
-              })
+              background: !darkMode ? "#f7c345" : '#2F2F47',
+              '&:hover': {
+                background: !darkMode ? "#f7c345" : '#2F2F47'
+              }
+            })
           }}
         >
           {itemIcon}

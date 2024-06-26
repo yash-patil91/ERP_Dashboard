@@ -8,9 +8,12 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Slider from "react-slick";
 import flag from '../../../assets/United States.png'
+import React, { useContext } from 'react';
+
 
 // project import
 import MainCard from 'components/MainCard';
+import { DarkModeContext } from '../../DarkModeContext';
 
 
 export default function Currency() {
@@ -23,9 +26,12 @@ export default function Currency() {
         slidesToScroll: 3
     };
 
+    const { darkMode } = useContext(DarkModeContext);
+
+
 
     return (
-        <MainCard contentSX={{ p: 2.25, background: "#3A3A5A" }}>
+        <MainCard contentSX={{ p: 2.25, background: darkMode ? '#3A3A5A' : 'radial-gradient(circle at 10% 20%, rgb(255, 200, 124) 0%, rgb(252, 251, 121) 90%)' }} >
             <Stack spacing={0.5}>
                 <Typography variant="h5" color="white" textAlign={'center'}>
                     Select Currency

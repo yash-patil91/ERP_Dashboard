@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import { RiGoogleFill } from "react-icons/ri";
 import { IoEye, IoEyeOff } from "react-icons/io5";
 import { GiWarBonnet } from "react-icons/gi";
@@ -18,14 +17,13 @@ import {
     Box,
     Divider
 } from '@mui/material';
+import React, { useState, useContext} from 'react';
+import { DarkModeContext } from '../../components/DarkModeContext';
+
 
 const Register = () => {
     const [passwordVisible, setPasswordVisible] = useState(false);
-    const [darkMode, setDarkMode] = useState(() => {
-      // Retrieve the dark mode preference from localStorage
-      const savedDarkMode = localStorage.getItem('darkMode');
-      return savedDarkMode === 'true';
-  });
+
     const navigate = useNavigate();
 
     const [formData, setFormData] = useState({
@@ -42,10 +40,8 @@ const Register = () => {
         setPasswordVisible(!passwordVisible);
     };
 
-    const toggleDarkMode = () => {
-      setDarkMode(!darkMode);
-      localStorage.setItem('darkMode', !darkMode);
-  };
+    const { darkMode, toggleDarkMode } = useContext(DarkModeContext);
+
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -99,8 +95,8 @@ const Register = () => {
     }
 
     return (
-      <div style={{ background: darkMode ?"#2E2E48": "#ffc87c" }}>
-        <Container maxWidth="xs" sx={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', bgcolor: darkMode ? '#2E2E48' : '#ffc87c', color: darkMode ? 'white' : '#002D74' }}>
+      <div style={{ background: darkMode ?"#2E2E48": "#f7c345" }}>
+        <Container maxWidth="xs" sx={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', bgcolor: darkMode ? '#2E2E48' : '#f7c345', color: darkMode ? 'white' : '#002D74' }}>
             <Paper elevation={3} sx={{ p: 4, background: darkMode ? '#2E2E48' : 'radial-gradient(circle at 10% 20%, rgb(255, 200, 124) 0%, rgb(252, 251, 121) 90%)', width: '100%', borderRadius: 2 }}>
                 <Box display="flex" justifyContent="space-between" alignItems="center" mb={2}>
                     <Box display="flex" alignItems="center" bgcolor="black" p={1} borderRadius="50%">
@@ -128,7 +124,7 @@ const Register = () => {
                                     color: darkMode ? 'white' : 'grey.600'
                                 }
                             }}
-                            sx={{ bgcolor: darkMode ? '#2E2E48' : '#ffc87c' }}
+                            sx={{ bgcolor: darkMode ? '#2E2E48' : '#f7c345' }}
                         />
                         <TextField
                             label="Email"
@@ -143,7 +139,7 @@ const Register = () => {
                                     color: darkMode ? 'white' : 'grey.600'
                                 }
                             }}
-                            sx={{ bgcolor: darkMode ? '#2E2E48' : '#ffc87c' }}
+                            sx={{ bgcolor: darkMode ? '#2E2E48' : '#f7c345' }}
                         />
                         <TextField
                             label="Username"
@@ -158,7 +154,7 @@ const Register = () => {
                                     color: darkMode ? 'white' : 'grey.600'
                                 }
                             }}
-                            sx={{ bgcolor: darkMode ? '#2E2E48' : '#ffc87c' }}
+                            sx={{ bgcolor: darkMode ? '#2E2E48' : '#f7c345' }}
                         />
                         {usernameError && <Typography color="error">{usernameError}</Typography>}
                         <TextField
@@ -184,7 +180,7 @@ const Register = () => {
                                     color: darkMode ? 'white' : 'grey.600'
                                 }
                             }}
-                            sx={{ bgcolor: darkMode ? '#2E2E48' : '#ffc87c' }}
+                            sx={{ bgcolor: darkMode ? '#2E2E48' : '#f7c345' }}
                         />
                         {passwordError && <Typography color="error">{passwordError}</Typography>}
                         {error && <Typography color="error">{error}</Typography>}
@@ -209,7 +205,7 @@ const Register = () => {
 
                 <Box mt={3} display="flex" justifyContent="space-between" alignItems="center">
                     <Typography variant="body2"  sx={{ color: darkMode ? '#ffffff' : '#000000' }}>Already have an account?</Typography>
-                    <Button variant="outlined" onClick={handleSignIn} sx={{ bgcolor: darkMode ? '#2E2E48' : '#ffc87c', color: darkMode ? 'white' : '#002D74' }}>Sign In</Button>
+                    <Button variant="outlined" onClick={handleSignIn} sx={{ bgcolor: darkMode ? '#2E2E48' : '#f7c345', color: darkMode ? 'white' : '#002D74' }}>Sign In</Button>
                 </Box>
             </Paper>
         </Container>
